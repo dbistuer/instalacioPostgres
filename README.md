@@ -1,6 +1,6 @@
 # 1 Instal.lació SGBD Postgresql en entorn virtual
 
-1. Instal.lació d’un sgbd Postgresql en un entorn virtual Ubuntu Server 16.04.03
+1. Instal.lació d’un sgbd Postgresql en un entorn virtual Ubuntu Server 18.04.03
 
 2. Aneu a la pàgina: https://www.ubuntu.com/download/server i descarregeu la darrera versió LTS de Server.
 
@@ -37,50 +37,62 @@ Per motius de seguretat i exemple de bones pràctiques, es crearan tres usuaris 
 el sistema i en el SGBD ( però com detallem no tindran els mateixos permisos en un lloc que en
 l’altre).
 
-1. AdministradorSistema : tindrà els permisos de root en el sistema ( en particular
-instal.lar programas, accedir carpetes del sistema, crear usuaris...), però en el SGBD
-serà un usuari «normal».
+1. AdministradorSistema : tindrà els permisos de root en el sistema ( en particular instal.lar programas, accedir carpetes del sistema, crear usuaris...), però en el SGBD serà un usuari «normal».
 
-2. AdministradorBD: en el sistema tendrà permisos de usuari normal i en la base de Dades
-«superuser»: podra crear bases de dades, crear taules i crear usuaris/roles.
+>Ho fare amb la comanda:
 
-3. Usuari: No tindrà permisos especials ni en el sistema ni en el SGBD, però podra accedir a
-tots dos.
+*sudo useradd -u 0 -o -g 0 AdministradorSistema*
+
+>I per donarli una contrasenya:
+
+*sudo passwd AdministradorSistema*
+
+2. AdministradorBD: en el sistema tendrà permisos de usuari normal i en la base de Dades «superuser»: podra crear bases de dades, crear taules i crear usuaris/roles.
+
+3. Usuari: No tindrà permisos especials ni en el sistema ni en el SGBD, però podra accedir a tots dos.
 
 # 3 Configuració SGBD Postgresql
 
-Per defecte el SGBD Posgresql crea un usuari postgres al sistema, una base de
-dades postgres i un usuari del gestor postgres. Per accedir a una base de dades s’utilitza la funció
-psql base_de_dades. Això és una mica complicat i hem de procedir a configurar-lo i personalitzar-lo.
+Per defecte el SGBD Posgresql crea un usuari postgres al sistema, una base de dades postgres i un usuari del gestor postgres. Per accedir a una base de dades s’utilitza la funció psql base_de_dades. Això és una mica complicat i hem de procedir a configurar-lo i personalitzar-lo.
 
-1. Per accedir per primer cop al SGBD haurieu d’entrar com usuari postgres utilitzant la
-instrucció: sudo -i -u postgres, i un cop estem com usuari postgres fem psql per
-connectarnos a la base de dades.
+1. Per accedir per primer cop al SGBD haurieu d’entrar com usuari postgres utilitzant la instrucció: sudo -i -u postgres, i un cop estem com usuari postgres fem psql per connectarnos a la base de dades.
 
 2. Crear almenys una base de dades nova.
 
-3. Afegir almenys una base de dades. Podeu anar http://pgfoundry.org/projects/dbsamples/ i
-descarregar la bases de dades de prova ( pagila). Trobareu un zip amb un fitxer sql,
-schema i altre data.
+>Amb la comanda:
+
+*create dataabase (nom de la base de dades)*
+
+
+3. Afegir almenys una base de dades. Podeu anar http://pgfoundry.org/projects/dbsamples/ i descarregar la bases de dades de prova ( pagila). Trobareu un zip amb un fitxer sql, schema i altre data.
 
 4. Configurar els permisos i roles segons la descripció feta en l’apartat 2.
 
-5. Instal.lar i configurar el programa phppgadmin: que ens donara accés via web al nostre
-gestor
+>Amb la comanda:
+
+*create user --interactive*
+
+>Amb l'anterior comanda creem l'usuari i ens demana si volem que sigui administrador o no, pertant al "AdiministradorDB" se li posara que si i als altres dos que no com es veu a la seguent imatge
+
+>I seguidament s'els haura de donar contrassenya, perque si no no se pot accedir a aquestos usuaris amb la comanda:
+
+*ALTER USER (NOM USUARI) WITH ENCRYPTED PASSWORD '(CONTRASSENYA)'*
+
+
+5. Instal.lar i configurar el programa phppgadmin: que ens donara accés via web al nostre gestor
+
+
+
 
 # 4 Utilització bàsica Postgresql
 
 Per acavar seria desitjable tindre nocions bàsiques sobre la utilització del terminal i
 del nostre SGBD.
 
-1. Cerqueu en internet i proveu les instruccions més usuals en consola del SGBD.( Ex:
-\dt, \du, exit...)
+1. Cerqueu en internet i proveu les instruccions més usuals en consola del SGBD.( Ex: \dt, \du, exit...)
 
-2. Executeu algunes instruccions sql en el terminal del SGBD. ( les instruccions SQL
-acaven en ;)
+2. Executeu algunes instruccions sql en el terminal del SGBD. ( les instruccions SQL acaven en ;)
 
-3. Crear un fitxer sql, utilitzant per exemple geany, i carregar-lo des de consola utilitzant la
-instrucció \i script1.sql ( vigileu el path). Podeu utilitzar com referència els fitxers de la
-base de dades pagila descarregada en activitats anteriors
+3. Crear un fitxer sql, utilitzant per exemple geany, i carregar-lo des de consola utilitzant la instrucció \i script1.sql ( vigileu el path). Podeu utilitzar com referència els fitxers de la base de dades pagila descarregada en activitats anteriors
 
 4. Expliqueu alguns paràmetres de psql i el que fa realment ( sistema)
