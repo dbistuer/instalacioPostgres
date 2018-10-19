@@ -8,21 +8,26 @@
 
 4. Per facilitar la feina i fer més intuitiu i visual el sistema, instal.leu i configureu un escriptori gràfic. Es recomana utilitzar XFCE ( el més lleuger i menys ocupa).
 
->La comanda d'instal·lacio de l'interficie es aquesta: 
->*sudo apt-get install xfce4 xfce4-goodies*
+>La comanda d'instal·lacio de l'interficie es aquesta:
+ 
+*sudo apt-get install xfce4 xfce4-goodies*
 >Pero jo he preferit instal·lar l'escriptori per defecte d'ubuntu, per a fer mes amena la practica amb la comanda seguent.
->*sudo apt-get install ubuntu-desktop*
+
+*sudo apt-get install ubuntu-desktop*
 >I per a iniciar l'escritori s'escriura la comanda seguent:
->*startx*
+
+*startx*
 
 5. Es recomana així mateix instal.lar els programes Synaptic ( gestió de paquets) i geany( editor de text).
 
 >Instalació synaptic:
->*sudo apt install synaptic -y*
+
+*sudo apt install synaptic -y*
 >Instalació geany:
->*sudo add-apt-repository ppa:geany-dev/ppa*
->*sudo apt update*
->*sudo apt install geany geany-plugin-\* -y*
+
+*sudo add-apt-repository ppa:geany-dev/ppa*
+*sudo apt update*
+*sudo apt install geany geany-plugin-\* -y*
 
 
 
