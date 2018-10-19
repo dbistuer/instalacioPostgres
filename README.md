@@ -81,8 +81,24 @@ Per defecte el SGBD Posgresql crea un usuari postgres al sistema, una base de da
 
 5. Instal.lar i configurar el programa phppgadmin: que ens donara accés via web al nostre gestor
 
+>Jo, com ja savia que s'havia d'instal·lar, ja l'heinstal·lat al instalar el postgres, pero si no l'agues instalat hauria d'executar la seguent comanda:
+
+*sudo apt install phppgadmin*
+
+>Seguidament, s'haura d'anar al fitxer de configuracio d'aquest:
+
+*sudo gedit /etc/phppgadmin/phpgadmin.conf*
+
+> I modifcar el contingut de la seguent foma, haurem de comentar l'etiqueta aixi '# Require local' i seguidament escriure  'Require all granted' i ens quedare de la seguent forma:
 
 
+>I tambe haurm d'editar la confguracio de l'arxiu situat a:
+
+*sudo gedit /etc/phppgadmin/config.inc.php*
+
+>En aquest h'aurem de cercar la seguent linia i canviar 'true' per 'false':
+
+*$conf['extra_login_security'] = true;*
 
 # 4 Utilització bàsica Postgresql
 
