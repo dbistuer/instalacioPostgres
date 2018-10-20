@@ -83,6 +83,18 @@ Per defecte el SGBD Posgresql crea un usuari postgres al sistema, una base de da
 
 ![PAGLA](/img/DESCARREGA_PAGLA.PNG)
 
+>Un cop descarregat anire a l'interficie grafica de postgres i creare una taula clicant a crear bae de datos i posteriorment posant-li un nom.
+
+![DB](/img/createdb_.PNG)
+![pragla](/img/pagila.PNG)
+>Seguidament i un cop descomprimit el fitxer .zip anire al alpartat SQL d'aquesta base de dades i clicare l'opcio 'Examinar'.
+
+![pragla-1](/img/pagila-1.PNG)
+>I finalmet inserire les esquema i finalment les dades d'aquest.
+
+![pragla-2](/img/pagila-2.PNG)
+![pragla-3](/img/pagila-3.PNG)
+
 4. Configurar els permisos i roles segons la descripció feta en l’apartat 2.
 
 >Amb la comanda:
