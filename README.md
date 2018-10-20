@@ -153,9 +153,10 @@ del nostre SGBD.
 
 1. Cerqueu en internet i proveu les instruccions més usuals en consola del SGBD.( Ex: \dt, \du, exit...)
 
->Si entres al postgres amb la comanda 'psql' i escrius '\?' et surten totes les comandes que te el postgres:
+>Si entres al postgres amb la comanda 'psql' i escrius '\\?' et surten totes les comandes que te el postgres:
 
-*\?*
+*\\?*
+
 ![comandes](/img/comandes.png)
 ![comandes1](/img/comandes1.png)
 
@@ -169,6 +170,7 @@ del nostre SGBD.
 >I si escrius '\h' et surten totes les accions que accepta postgres:
 
 *\h*
+
 ![accions](/img/accions.png)
 ![accions1](/img/accions1.png)
 
@@ -177,6 +179,7 @@ del nostre SGBD.
 >Select d'una taula que he generat jo
 
 ![accio](/img/accio.png)
+
 3. Crear un fitxer sql, utilitzant per exemple geany, i carregar-lo des de consola utilitzant la instrucció \i script1.sql ( vigileu el path). Podeu utilitzar com referència els fitxers de la base de dades pagila descarregada en activitats anteriors
 
 4. Expliqueu alguns paràmetres de psql i el que fa realment ( sistema)
