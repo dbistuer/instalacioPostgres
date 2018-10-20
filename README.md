@@ -4,6 +4,7 @@
 
 2. Aneu a la pàgina: https://www.ubuntu.com/download/server i descarregeu la darrera versió LTS de Server.
 
+![Descarrega](/img/descarrega_us.PNG)
 3. A partir d’una instal.lació mínima, feu la instal.lació dels paquets necessaris per poder funcionar ( paquet LAMP).
 
 4. Per facilitar la feina i fer més intuitiu i visual el sistema, instal.leu i configureu un escriptori gràfic. Es recomana utilitzar XFCE ( el més lleuger i menys ocupa).
@@ -14,6 +15,9 @@
 >Pero jo he preferit instal·lar l'escriptori per defecte d'ubuntu, per a fer mes amena la practica amb la comanda seguent.
 
 *sudo apt-get install ubuntu-desktop*
+
+![inteficie](/img/interf_graf.PNG)
+
 >I per a iniciar l'escritori s'escriura la comanda seguent:
 
 *startx*
@@ -23,13 +27,15 @@
 >Instalació synaptic:
 
 *sudo apt install synaptic -y*
+
+![synaptic](/img/install synaptic.png)
 >Instalació geany:
 
 *sudo add-apt-repository ppa:geany-dev/ppa*
 *sudo apt update*
 *sudo apt install geany geany-plugin-\* -y*
-
-
+![REPOSITORI](/img/repositori geany.PNG)
+![GEANY](/img/install geany.PNG)
 
 # 2 Configuració sistema
 
@@ -47,9 +53,17 @@ l’altre).
 
 *sudo passwd AdministradorSistema*
 
+![ADSIS](/img/usuari adsisi.PNG)
+
 2. AdministradorBD: en el sistema tendrà permisos de usuari normal i en la base de Dades «superuser»: podra crear bases de dades, crear taules i crear usuaris/roles.
 
+>Aquest i el seguent l'he creat per interficie grafica
+
+![ADB](/img/usuari aDB.PNG)
+
 3. Usuari: No tindrà permisos especials ni en el sistema ni en el SGBD, però podra accedir a tots dos.
+
+![USUARI](/img/usuari PELAO.PNG)
 
 # 3 Configuració SGBD Postgresql
 
@@ -61,16 +75,21 @@ Per defecte el SGBD Posgresql crea un usuari postgres al sistema, una base de da
 
 >Amb la comanda:
 
-*create dataabase (nom de la base de dades)*
+*create database (nom de la base de dades)*
 
+![CREATE](/img/CREATEDB.PNG)
 
 3. Afegir almenys una base de dades. Podeu anar http://pgfoundry.org/projects/dbsamples/ i descarregar la bases de dades de prova ( pagila). Trobareu un zip amb un fitxer sql, schema i altre data.
+
+![PAGLA](/img/DESCARREGA_PAGLA.PNG)
 
 4. Configurar els permisos i roles segons la descripció feta en l’apartat 2.
 
 >Amb la comanda:
 
-*create user --interactive*
+*create user --interactive (NOM USUARI)*
+
+![USUARISDB](/img/USUARISdb.PNG)
 
 >Amb l'anterior comanda creem l'usuari i ens demana si volem que sigui administrador o no, pertant al "AdiministradorDB" se li posara que si i als altres dos que no com es veu a la seguent imatge
 
@@ -78,20 +97,22 @@ Per defecte el SGBD Posgresql crea un usuari postgres al sistema, una base de da
 
 *ALTER USER (NOM USUARI) WITH ENCRYPTED PASSWORD '(CONTRASSENYA)'*
 
+![UDBC](/img/USUARISdb_contrassenya.PNG)
 
 5. Instal.lar i configurar el programa phppgadmin: que ens donara accés via web al nostre gestor
 
->Jo, com ja savia que s'havia d'instal·lar, ja l'heinstal·lat al instalar el postgres, pero si no l'agues instalat hauria d'executar la seguent comanda:
+>Jo, com ja savia que s'havia d'instal·lar, ja l'he instal·lat al instalar el postgres, pero si no l'agues instalat hauria d'executar la seguent comanda:
 
 *sudo apt install phppgadmin*
 
+![PHPPG](/img/instalacio postgres.PNG)
 >Seguidament, s'haura d'anar al fitxer de configuracio d'aquest:
 
 *sudo gedit /etc/phppgadmin/phpgadmin.conf*
 
 > I modifcar el contingut de la seguent foma, haurem de comentar l'etiqueta aixi '# Require local' i seguidament escriure  'Require all granted' i ens quedare de la seguent forma:
 
-
+![PHPPG1](/img/conf_phphpg-1.PNG)
 >I tambe haurm d'editar la confguracio de l'arxiu situat a:
 
 *sudo gedit /etc/phppgadmin/config.inc.php*
@@ -100,6 +121,19 @@ Per defecte el SGBD Posgresql crea un usuari postgres al sistema, una base de da
 
 *$conf['extra_login_security'] = true;*
 
+![PHPPG2](/img/conf_phphpg-2.PNG)
+
+>Seguidament s'haura de reiniciar el servidor de postgres i el de apache2 amb les seguents comandes:
+
+*systemctl restart postgresql
+systemctl restart apache2*
+
+![PHPPG3](/img/conf_phphpg-3.PNG)
+
+>I seguidament, ja podrema anar al navegador i posar la seguent capçalera i accedir a les bases de dades de postgres:
+
+![PHPPG4](/img/conf_phphpg-4.PNG)
+![PHPPG5](/img/conf_phphpg-5.PNG)
 # 4 Utilització bàsica Postgresql
 
 Per acavar seria desitjable tindre nocions bàsiques sobre la utilització del terminal i
