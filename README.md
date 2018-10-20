@@ -28,15 +28,15 @@
 
 *sudo apt install synaptic -y*
 
-![synaptic](/img/install synaptic.png)
+![synaptic](/img/install_synaptic.png)
 >Instalació geany:
 
 *sudo add-apt-repository ppa:geany-dev/ppa*
 *sudo apt update*
 *sudo apt install geany geany-plugin-\* -y*
-![REPOSITORI](/img/repositori geany.PNG)
-![GEANY](/img/install geany.PNG)
 
+![REPOSITORI](/img/repositori_geany.PNG)
+![GEANY](/img/install_geany.PNG)
 # 2 Configuració sistema
 
 Per motius de seguretat i exemple de bones pràctiques, es crearan tres usuaris diferents en
@@ -53,17 +53,17 @@ l’altre).
 
 *sudo passwd AdministradorSistema*
 
-![ADSIS](/img/usuari adsisi.PNG)
+![ADSIS](/img/usuari_adsisi.PNG)
 
 2. AdministradorBD: en el sistema tendrà permisos de usuari normal i en la base de Dades «superuser»: podra crear bases de dades, crear taules i crear usuaris/roles.
 
 >Aquest i el seguent l'he creat per interficie grafica
 
-![ADB](/img/usuari aDB.PNG)
+![ADB](/img/usuari_aDB.PNG)
 
 3. Usuari: No tindrà permisos especials ni en el sistema ni en el SGBD, però podra accedir a tots dos.
 
-![USUARI](/img/usuari PELAO.PNG)
+![USUARI](/img/usuari_PELAO.PNG)
 
 # 3 Configuració SGBD Postgresql
 
@@ -105,7 +105,7 @@ Per defecte el SGBD Posgresql crea un usuari postgres al sistema, una base de da
 
 *sudo apt install phppgadmin*
 
-![PHPPG](/img/instalacio postgres.PNG)
+![PHPPG](/img/instalacio_postgres.PNG)
 >Seguidament, s'haura d'anar al fitxer de configuracio d'aquest:
 
 *sudo gedit /etc/phppgadmin/phpgadmin.conf*
