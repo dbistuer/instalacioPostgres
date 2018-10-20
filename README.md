@@ -16,7 +16,7 @@
 
 *sudo apt-get install ubuntu-desktop*
 
-![inteficie](/img/interf_graf.PNG)
+![inteficie](/img/interf_graf.png)
 
 >I per a iniciar l'escritori s'escriura la comanda seguent:
 
@@ -28,7 +28,7 @@
 
 *sudo apt install synaptic -y*
 
-![synaptic](/img/install_synaptic.png)
+![synaptic](/img/install_synaptic.PNG)
 >Instalació geany:
 
 *sudo add-apt-repository ppa:geany-dev/ppa*
@@ -53,7 +53,7 @@ l’altre).
 
 *sudo passwd AdministradorSistema*
 
-![ADSIS](/img/usuari_adsisi.PNG)
+![ADSIS](/img/usuari_adsis.PNG)
 
 2. AdministradorBD: en el sistema tendrà permisos de usuari normal i en la base de Dades «superuser»: podra crear bases de dades, crear taules i crear usuaris/roles.
 
